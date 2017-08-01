@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<html lang = "en-US">
+<meta http-equiv = "Content-Type" content = "text/html; charset = utf-8"/>
+<head>
+    <title id = "title">Regal Robes</title>
+    <meta name = "keywords" content = "robes">
+    <meta name= "description" content= "regal robes">
+</head>
+<body>
+<div id = "home">
+<h1 align = "center">Regal Robes</h1>
+
+<h2>RR9001</h2>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9001', 'Black & Gold')"><img src = "RR9001/RR9001 BLK.jpg" style = "width: 200px; height: 300px"><br>Black & Gold<br>$99</button>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9001', 'Purple & Gold')"><img src = "RR9001/RR9001 PPL.jpg" style = "width: 200px; height: 300px"><br>Purple & Gold<br>$99</button>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9001', 'White & Gold')"><img src = "RR9001/RR9001 WHT.jpg" style = "width: 200px; height: 300px"><br>White & Gold<br>$99</button>
+
+<h2>RR9002</h2>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9002', 'Black & Gold')"><img src = "RR9002/RR9002 BLK.jpg" style = "width: 200px; height: 300px"><br>Black & Gold<br>$129</button>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9002', 'Purple & Gold')"><img src = "RR9002/RR9002 PPL.jpg" style = "width: 200px; height: 300px"><br>Purple & Gold<br>$129</button>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9002', 'White & Gold')"><img src = "RR9002/RR9002 WHT.jpg" style = "width: 200px; height: 300px"><br>White & Gold<br>$129</button>
+
+<h2>RR9071</h2>
+<button style = "width: 430px; height: 340px" onclick = "Checkout('RR9071', 'Black')"><img src = "RR9071/RR9071 BLK.jpg" style = "width: 200px; height: 300px"><img src = "RR9071/RR9071 BLK M.jpg" style = "width: 200px; height: 300px"><br>Black<br>$69</button>
+<button style = "width: 430px; height: 340px" onclick = "Checkout('RR9071', 'Red')"><img src = "RR9071/RR9071 RED.jpg" style = "width: 200px; height: 300px"><img src = "RR9071/RR9071 RED M.jpg" style = "width: 200px; height: 300px"><br>Red<br>$69</button>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9071', 'White')"><img src = "RR9071/RR9071 WHT.jpg" style = "width: 200px; height: 300px"><br>White<br>$69</button>
+
+<h2>RR9081</h2>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9081', 'Black')"><img src = "RR9081/RR9081 BLK.jpg" style = "width: 200px; height: 300px"><br>Black<br>$69</button>
+<button style = "width: 430px; height: 340px" onclick = "Checkout('RR9081', 'Purple')"><img src = "RR9081/RR9081 PPL.jpg" style = "width: 200px; height: 300px"><img src = "RR9081/RR9081 PPL M.jpg" style = "width: 200px; height: 300px"><br>Purple<br>$69</button>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9081', 'White')"><img src = "RR9081/RR9081 WHT.jpg" style = "width: 200px; height: 300px"><br>White<br>$69</button>
+
+<h2>RR9091</h2>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9091', 'Black & Gold')"><img src = "RR9091/RR9091 BLK.jpg" style = "width: 200px; height: 300px"><br>Black & Gold<br>$99</button>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9091', 'Purple & Gold')"><img src = "RR9091/RR9091 PPL.jpg" style = "width: 135px; height: 300px"><br>Purple & Gold<br>$99</button>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9091', 'White & Gold')"><img src = "RR9091/RR9091 WHT.jpg" style = "width: 111px; height: 300px"><br>White & Gold<br>$99</button>
+
+<h2>RR9501</h2>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9501', 'White')"><img src = "RR9501/RR9501 WHT.jpg" style = "width: 171px; height: 300px"><br>White<br>$109</button>
+
+<h2>RR9100</h2>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9100', 'Red')"><img src = "RR9100/RR9100 RED.jpg" style = "width: 200px; height: 300px"><br>Red<br>$27</button>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9100', 'Black')"><img src = "RR9100/RR9100 BLK.jpg" style = "width: 200px; height: 300px"><br>Black<br>$27</button>
+<button style = "width: 220px; height: 340px" onclick = "Checkout('RR9100', 'Purple')"><img src = "RR9100/RR9100 PPL.jpg" style = "width: 200px; height: 300px"><br>Purple<br>$27</button>
+</div>
+
+<div id = "checkout" align = "center" style = "display: none">
+<div align = "left"><button onclick = "Home()" style = "width: 60px">Home</button></div>
+<h1>Checkout</h1>
+
+<img id = "image 1" src = "" style = "width: 400px; height: 600px; display: inline-block; vertical-align: top">
+<img id = "image 2" src = "" style = "width: 400px; height: 600px; display: inline-block; vertical-align: top">
+
+<form name = "checkout" onsubmit = "return submitForm()" style = "display: inline-block" align = "left"
+action = "https://www.paypal.com/cgi-bin/webscr" method = "post" target = "_top">
+    Style #: <input id = "style number" name = "style number" value = "" style = "width: 70px; text-align: center" readonly><br>
+    Color: <input id = "color" name = "color" value = "" style = "width: 90px; text-align: center" readonly><br>
+    <div id = "size" style = "display: inline"></div>
+    Price: <p id = "price" style = "display: inline"></p> (per unit)<br>
+    Quantity: <input id = "quantity" name = "quantity" type = "number" min = "1" max = "100" value = "1" style = "width: 40px;" required><br>
+    <br>
+    <input type = "hidden" name = "cmd" value = "_s-xclick">
+    <input id = "hosted_button_id" type = "hidden" name = "hosted_button_id" value = "">
+    <input type = "image" src = "https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border = "0" name = "submit" alt = "PayPal - The safer, easier way to pay online!">
+    <img alt = "" border = "0" src = "https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width = "1" height = "1">
+</form>
+</div>
+
+<script>
+const sizeA = '<input type = "hidden" name = "on0" value = "Size"><div style = "display: none"><input type = "text" name = "os0" value = "" readonly></div>Size: <select id = "size menu" name = "size"><option value = "none">Choose</option><option value = "6">6</option><option value = "7">7</option><option value = "8">8</option><option value = "9">9</option><option value = "10">10</option><option value = "11">11</option><option value = "12">12</option><option value = "13">13</option><option value = "14">14</option><option value = "15">15</option><option value = "16">16</option><option value = "17">17</option><option value = "18">18</option><option value = "16W">16W</option><option value = "17W">17W</option><option value = "18W">18W</option><option value = "19W">19W</option><option value = "20W">20W</option><option value = "21W">21W</option><option value = "22W">22W</option><option value = "23W">23W</option><option value = "24W">24W</option><option value = "25W">25W</option><option value = "26W">26W</option><option value = "27W">27W</option><option value = "28W">28W</option><option value = "29W">29W</option><option value = "30W">30W</option></select><br>';
+const sizeB = '<input type = "hidden" name = "on0" value = "Size"><div style = "display: none"><input type = "text" name = "os0" value = "" readonly></div>Size: <select id = "size menu" name = "size"><option value = "none">Choose</option><option value = "S">S</option><option value = "M">M</option><option value = "L">L</option><option value = "XL">XL</option><option value = "1X">1X</option><option value = "2X">2X</option><option value = "3X">3X</option></select><br>';
+const sizeC = '<input type = "hidden" name = "on0" value = "Size"><div style = "display: none"><input type = "text" name = "os0" value = "" readonly></div>Size: <select id = "size menu" name = "size"><option value = "none">Choose</option><option value = "S/M">S/M</option><option value = "L/XL">L/XL</option><option value = "XXL/XXXL">XXL/XXXL</option></select><br>';
+const sizeD = '<input type = "hidden" name = "on0" value = "Size"><div style = "display: none"><input type = "text" name = "os0" value = "" readonly></div>Size: <select id = "size menu" name = "size"><option value = "none">Choose</option><option value = "M">M</option><option value = "L">L</option><option value = "XL">XL</option><option value = "1X">1X</option><option value = "2X">2X</option><option value = "3X">3X</option></select><br>';
+
+function Checkout(styleNum, color) {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("title").innerHTML = "Checkout";
+    
+    document.getElementById("style number").value = styleNum;
+    document.getElementById("color").value = color;
+    
+    var shortColor = ((color == "Black") || (color == "Black & Gold")) ? "BLK" : (((color == "Purple") || (color == "Purple & Gold")) ? "PPL" : (((color == "White") || (color == "White & Gold")) ? "WHT" : ((color == "Red") ? "RED" : "unknown")));
+    if (shortColor != "unknown") {
+        document.getElementById("image 1").src = styleNum + "/" + styleNum + " " + shortColor + ".jpg";
+    }
+    if (((styleNum == "RR9071") && ((color == "Black") || (color == "Red"))) || ((styleNum == "RR9081") && (color == "Purple"))) {
+        document.getElementById("image 2").style.display = "inline-block";
+        document.getElementById("image 2").src = styleNum + "/" + styleNum + " " + shortColor + " M.jpg";
+    } else {
+        document.getElementById("image 2").style.display = "none";
+    }
+    
+    if ((styleNum == "RR9091") && (color == "Purple & Gold")) {
+        document.getElementById("image 1").style.width = "271px";
+    } else if ((styleNum == "RR9091") && (color == "White & Gold")) {
+        document.getElementById("image 1").style.width = "222px";
+    } else if ((styleNum == "RR9501") && (color == "White")) {
+        document.getElementById("image 1").style.width = "341px";
+    } else {
+        document.getElementById("image 1").style.width = "400px";
+    }
+    
+    var sizeType = ((styleNum == "RR9001") || (styleNum == "RR9501")) ? "a" : ((styleNum == "RR9002") ? "b" : (((styleNum == "RR9071") || (styleNum == "RR9081")) ? "c" : ((styleNum == "RR9091") ? "d" : "unknown")));
+    if (styleNum == "RR9100") {
+        document.getElementById("size").innerHTML = "";
+    } else if (sizeType == "a") {
+        document.getElementById("size").innerHTML = sizeA;
+    } else if (sizeType == "b") {
+        document.getElementById("size").innerHTML = sizeB;
+    } else if (sizeType == "c") {
+        document.getElementById("size").innerHTML = sizeC;
+    } else if (sizeType == "d") {
+        document.getElementById("size").innerHTML = sizeD;
+    }
+    
+    document.getElementById("price").innerHTML = ((styleNum == "RR9001") || (styleNum == "RR9091")) ? ("$99") : ((styleNum == "RR9002") ? ("$129") : (((styleNum == "RR9071") || (styleNum == "RR9081")) ? ("$69") : ((styleNum == "RR9501") ? ("$109") : ((styleNum == "RR9100") ? ("$27") : ("unknown")))));
+    
+    document.getElementById("checkout").style.display = "block";
+}
+
+function Home() {
+    document.getElementById("checkout").style.display = "none";
+    document.getElementById("title").innerHTML = "Regal Robes";
+    document.getElementById("home").style.display = "block";
+}
+
+function submitForm() {
+    var styleNum = document.forms["checkout"]["style number"].value;
+    var color = document.forms["checkout"]["color"].value;
+    if (styleNum != "RR9100") {
+        var size = document.forms["checkout"]["size"].value;
+        if (size == "none") {
+            alert("Please choose a size.");
+            return false;
+        }
+        document.forms["checkout"]["os0"].value = size;
+        document.getElementById("size menu").disabled = true;
+    }
+    document.getElementById("style number").disabled = true;
+    document.getElementById("color").disabled = true;
+    
+    if (styleNum == "RR9001") {
+        if (color == "Black & Gold") {
+            document.getElementById("hosted_button_id").value = "BVLH3E7PTNF5S";
+        } else if (color == "Purple & Gold") {
+            document.getElementById("hosted_button_id").value = "GHRLVCYCJ7HWW";
+        } else if (color == "White & Gold") {
+            document.getElementById("hosted_button_id").value = "LGX23YGP9NNML";
+        }
+    } else if (styleNum == "RR9002") {
+        if (color == "Black & Gold") {
+            document.getElementById("hosted_button_id").value = "UJSNMRFM98URA";
+        } else if (color == "Purple & Gold") {
+            document.getElementById("hosted_button_id").value = "YHE3HJ8WW9B7N";
+        } else if (color == "White & Gold") {
+            document.getElementById("hosted_button_id").value = "PRWSYFS9LEL4J";
+        }
+    } else if (styleNum == "RR9071") {
+        if (color == "Black") {
+            document.getElementById("hosted_button_id").value = "YBGDR78ZT2VLE";
+        } else if (color == "Red") {
+            document.getElementById("hosted_button_id").value = "HM5539UER75ZG";
+        } else if (color == "White") {
+            document.getElementById("hosted_button_id").value = "SDXZ7GKZTPX2N";
+        }
+    } else if (styleNum == "RR9081") {
+        if (color == "Black") {
+            document.getElementById("hosted_button_id").value = "RJJ88KR4397AY";
+        } else if (color == "Purple") {
+            document.getElementById("hosted_button_id").value = "D6QWYEATRFL68";
+        } else if (color == "White") {
+            document.getElementById("hosted_button_id").value = "FECTWSMH3KP8Q";
+        }
+    } else if (styleNum == "RR9091") {
+        if (color == "Black & Gold") {
+            document.getElementById("hosted_button_id").value = "ARK9CB5PZHC8E";
+        } else if (color == "Purple & Gold") {
+            document.getElementById("hosted_button_id").value = "9V39EJFPABC84";
+        } else if (color == "White & Gold") {
+            document.getElementById("hosted_button_id").value = "ZHQLGF67WFZSG";
+        }
+    } else if (styleNum == "RR9501") {
+        if (color == "White") {
+            document.getElementById("hosted_button_id").value = "9VXLB8SARERK2";
+        }
+    } else if (styleNum == "RR9100") {
+        if (color == "Red") {
+            document.getElementById("hosted_button_id").value = "CGYY7NTTSW6UJ";
+        } else if (color == "Black") {
+            document.getElementById("hosted_button_id").value = "DMWQET86RVPUW";
+        } else if (color == "Purple") {
+            document.getElementById("hosted_button_id").value = "ABJ25D8BKZ3YL";
+        }
+    }
+    return true;
+}
+</script>
+</body>
+</html>

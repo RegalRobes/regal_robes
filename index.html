@@ -54,11 +54,17 @@
 
 <form name = "checkout" onsubmit = "return submitForm()" style = "display: inline-block" align = "left"
 action = "https://www.paypal.com/cgi-bin/webscr" method = "post" target = "_top">
-    Style #: <input id = "style number" name = "style number" value = "" style = "width: 70px; text-align: center" readonly><br>
-    Color: <input id = "color" name = "color" value = "" style = "width: 90px; text-align: center" readonly><br>
+    <h4>Product Details:</h4>
+    Style #: <input id = "style number" name = "style number" value = "" style = "width: 70px; text-align: center" readonly><br><br>
+    Color: <input id = "color" name = "color" value = "" style = "width: 90px; text-align: center" readonly><br><br>
     <div id = "size" style = "display: inline"></div>
-    Price: <p id = "price" style = "display: inline"></p> (per unit)<br>
-    Quantity: <input id = "quantity" name = "quantity" type = "number" min = "1" max = "100" value = "1" style = "width: 40px;" required><br>
+    Price: <p id = "price" style = "display: inline"></p> (per unit)<br><br>
+    Quantity: <input id = "quantity" name = "quantity" type = "number" min = "1" max = "100" value = "1" style = "width: 40px;" required>
+    <h4>Shipping Address:</h4>
+    Country: <input type = "text" value = "United States" style = "width: 100px; text-align: center" readonly><br><br>
+    <input type = "text" name = "state"  placeholder = "State" style = "width: 100px" required> <input type = "text" name = "city" placeholder = "City" style = "width: 100px" required><br><br>
+    <input type = "text" name = "zip code" placeholder = "Zip Code" style = "width: 55px" required> <input type = "text" name = "street address" placeholder = "Street Address" style = "width: 145px" required><br><br>
+    <input type = "hidden" name = "on1" value = "Address"><div style = "display: none"><input type = "text" name = "os1" value = "" readonly></div>
     <br>
     <input type = "hidden" name = "cmd" value = "_s-xclick">
     <input id = "hosted_button_id" type = "hidden" name = "hosted_button_id" value = "">
@@ -68,10 +74,10 @@ action = "https://www.paypal.com/cgi-bin/webscr" method = "post" target = "_top"
 </div>
 
 <script>
-const sizeA = '<input type = "hidden" name = "on0" value = "Size"><div style = "display: none"><input type = "text" name = "os0" value = "" readonly></div>Size: <select id = "size menu" name = "size"><option value = "none">Choose</option><option value = "6">6</option><option value = "8">8</option><option value = "10">10</option><option value = "12">12</option><option value = "14">14</option><option value = "16">16</option><option value = "18">18</option><option value = "16W">16W</option><option value = "18W">18W</option><option value = "20W">20W</option><option value = "22W">22W</option><option value = "24W">24W</option><option value = "26W">26W</option><option value = "28W">28W</option><option value = "30W">30W</option></select><br>';
-const sizeB = '<input type = "hidden" name = "on0" value = "Size"><div style = "display: none"><input type = "text" name = "os0" value = "" readonly></div>Size: <select id = "size menu" name = "size"><option value = "none">Choose</option><option value = "S">S</option><option value = "M">M</option><option value = "L">L</option><option value = "XL">XL</option><option value = "1X">1X</option><option value = "2X">2X</option><option value = "3X">3X</option></select><br>';
-const sizeC = '<input type = "hidden" name = "on0" value = "Size"><div style = "display: none"><input type = "text" name = "os0" value = "" readonly></div>Size: <select id = "size menu" name = "size"><option value = "none">Choose</option><option value = "S/M">S/M</option><option value = "L/XL">L/XL</option><option value = "XXL/XXXL">XXL/XXXL</option></select><br>';
-const sizeD = '<input type = "hidden" name = "on0" value = "Size"><div style = "display: none"><input type = "text" name = "os0" value = "" readonly></div>Size: <select id = "size menu" name = "size"><option value = "none">Choose</option><option value = "M">M</option><option value = "L">L</option><option value = "XL">XL</option><option value = "1X">1X</option><option value = "2X">2X</option><option value = "3X">3X</option></select><br>';
+const sizeA = '<input type = "hidden" name = "on0" value = "Size"><div style = "display: none"><input type = "text" name = "os0" value = "" readonly></div>Size: <select name = "size"><option value = "none">Select</option><option value = "6">6</option><option value = "8">8</option><option value = "10">10</option><option value = "12">12</option><option value = "14">14</option><option value = "16">16</option><option value = "18">18</option><option value = "16W">16W</option><option value = "18W">18W</option><option value = "20W">20W</option><option value = "22W">22W</option><option value = "24W">24W</option><option value = "26W">26W</option><option value = "28W">28W</option><option value = "30W">30W</option></select><br><br>';
+const sizeB = '<input type = "hidden" name = "on0" value = "Size"><div style = "display: none"><input type = "text" name = "os0" value = "" readonly></div>Size: <select name = "size"><option value = "none">Select</option><option value = "S">S</option><option value = "M">M</option><option value = "L">L</option><option value = "XL">XL</option><option value = "1X">1X</option><option value = "2X">2X</option><option value = "3X">3X</option></select><br><br>';
+const sizeC = '<input type = "hidden" name = "on0" value = "Size"><div style = "display: none"><input type = "text" name = "os0" value = "" readonly></div>Size: <select name = "size"><option value = "none">Select</option><option value = "S/M">S/M</option><option value = "L/XL">L/XL</option><option value = "XXL/XXXL">XXL/XXXL</option></select><br><br>';
+const sizeD = '<input type = "hidden" name = "on0" value = "Size"><div style = "display: none"><input type = "text" name = "os0" value = "" readonly></div>Size: <select name = "size"><option value = "none">Select</option><option value = "M">M</option><option value = "L">L</option><option value = "XL">XL</option><option value = "1X">1X</option><option value = "2X">2X</option><option value = "3X">3X</option></select><br><br>';
 
 function Checkout(styleNum, color) {
     document.getElementById("home").style.display = "none";
@@ -113,8 +119,8 @@ function Checkout(styleNum, color) {
     } else if (sizeType == "d") {
         document.getElementById("size").innerHTML = sizeD;
     }
-    
     document.getElementById("price").innerHTML = ((styleNum == "RR9001") || (styleNum == "RR9091")) ? ("$99") : ((styleNum == "RR9002") ? ("$129") : (((styleNum == "RR9071") || (styleNum == "RR9081")) ? ("$69") : ((styleNum == "RR9501") ? ("$109") : ((styleNum == "RR9100") ? ("$27") : ("unknown")))));
+    document.getElementById("quantity").value = "1";
     
     document.getElementById("checkout").style.display = "block";
 }
@@ -126,19 +132,58 @@ function Home() {
 }
 
 function submitForm() {
+    var validForm = true;
+    
     var styleNum = document.forms["checkout"]["style number"].value;
     var color = document.forms["checkout"]["color"].value;
+    
     if (styleNum != "RR9100") {
         var size = document.forms["checkout"]["size"].value;
         if (size == "none") {
-            alert("Please choose a size.");
-            return false;
+            document.forms["checkout"]["size"].style.borderColor = "red";
+            validForm = false;
         }
-        document.forms["checkout"]["os0"].value = size;
-        document.getElementById("size menu").disabled = true;
+        else {
+            document.forms["checkout"]["size"].style.borderColor = "black";
+            document.forms["checkout"]["os0"].value = size;
+        }
     }
-    document.getElementById("style number").disabled = true;
-    document.getElementById("color").disabled = true;
+    
+    var state = document.forms["checkout"]["state"].value;
+    var city = document.forms["checkout"]["city"].value;
+    var zipCode = document.forms["checkout"]["zip code"].value;
+    var streetAddress = document.forms["checkout"]["street address"].value;
+
+    var states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin", "Wyoming"];
+    var validState = false;
+    for(index = 0; index < states.length; index++) {
+        if(state == states[index]) {
+            validState = true;
+            break;
+        }
+    }
+    if(!validState) {
+        document.forms["checkout"]["state"].style.borderColor = "red";
+        validForm = false;
+    } else {
+        document.forms["checkout"]["state"].style.borderColor = "black";
+    }
+    
+    if(zipCode.length != 5) {
+        document.forms["checkout"]["zip code"].style.borderColor = "red";
+        validForm = false;
+    } else if (((zipCode.charCodeAt(0) < 48) || (zipCode.charCodeAt(0) > 57)) || ((zipCode.charCodeAt(1) < 48) || (zipCode.charCodeAt(1) > 57)) || ((zipCode.charCodeAt(2) < 48) || (zipCode.charCodeAt(2) > 57)) || ((zipCode.charCodeAt(3) < 48) || (zipCode.charCodeAt(3) > 57)) || ((zipCode.charCodeAt(4) < 48) || (zipCode.charCodeAt(4) > 57))) {
+        document.forms["checkout"]["zip code"].style.borderColor = "red";
+        validForm = false;
+    } else {
+        document.forms["checkout"]["zip code"].style.borderColor = "black";
+    }
+    
+    if(!validForm) {
+        return false;
+    }
+    
+    document.forms["checkout"]["os1"].value = streetAddress + ", " + city + ", " + state + ", " + zipCode;
     
     if (styleNum == "RR9001") {
         if (color == "Black & Gold") {

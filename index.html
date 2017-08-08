@@ -47,7 +47,7 @@
 
 <div id = "checkout" align = "center" style = "display: none">
 <div align = "left"><button onclick = "Home()" style = "width: 60px">Home</button></div>
-<h1>Checkout</h1>
+<h1>Regal Robes - Checkout</h1>
 
 <img id = "image 1" src = "" style = "width: 400px; height: 600px; display: inline-block; vertical-align: top">
 <img id = "image 2" src = "" style = "width: 400px; height: 600px; display: inline-block; vertical-align: top">
@@ -55,21 +55,20 @@
 <form name = "checkout" onsubmit = "return submitForm()" style = "display: inline-block" align = "left"
 action = "https://www.paypal.com/cgi-bin/webscr" method = "post" target = "_top">
     <h4>Product Details:</h4>
-    Style #: <input id = "style number" name = "style number" value = "" style = "width: 70px; text-align: center" readonly><br><br>
-    Color: <input id = "color" name = "color" value = "" style = "width: 90px; text-align: center" readonly><br><br>
+    Style #: <input id = "style number" name = "style number" value = "" style = "width: 70px; text-align: center; border-width: 1px; border-color: black" readonly><br><br>
+    Color: <input id = "color" name = "color" value = "" style = "width: 90px; text-align: center; border-width: 1px; border-color: black" readonly><br><br>
     <div id = "size" style = "display: inline"></div>
     Price: <p id = "price" style = "display: inline"></p> (per unit)<br><br>
-    Quantity: <input id = "quantity" name = "quantity" type = "number" min = "1" max = "100" value = "1" style = "width: 40px;" required>
+    Quantity: <input id = "quantity" name = "quantity" type = "number" min = "1" max = "100" value = "1" style = "width: 40px; border-width: 1px; border-color: black" required>
     <h4>Shipping Address:</h4>
-    Country: <input type = "text" value = "United States" style = "width: 100px; text-align: center" readonly><br><br>
-    <input type = "text" name = "state"  placeholder = "State" style = "width: 100px" required> <input type = "text" name = "city" placeholder = "City" style = "width: 100px" required><br><br>
-    <input type = "text" name = "zip code" placeholder = "Zip Code" style = "width: 55px" required> <input type = "text" name = "street address" placeholder = "Street Address" style = "width: 145px" required><br><br>
+    Country: <input type = "text" value = "United States" style = "width: 100px; text-align: center; border-width: 1px; border-color: black" readonly><br><br>
+    <input type = "text" name = "state"  placeholder = " State" style = "width: 100px; border-width: 1px; border-color: black" required> <input type = "text" name = "city" placeholder = " City" style = "width: 100px; border-width: 1px; border-color: black" required><br><br>
+    <input type = "text" name = "zip code" placeholder = " Zip Code" style = "width: 60px; border-width: 1px; border-width: 1px; border-color: black" required> <input type = "text" name = "street address" placeholder = " Street Address" style = "width: 140px; border-width: 1px; border-color: black" required><br><br>
     <input type = "hidden" name = "on1" value = "Address"><div style = "display: none"><input type = "text" name = "os1" value = "" readonly></div>
     <br>
     <input type = "hidden" name = "cmd" value = "_s-xclick">
-    <input id = "hosted_button_id" type = "hidden" name = "hosted_button_id" value = "">
-    <input type = "image" src = "https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border = "0" name = "submit" alt = "PayPal - The safer, easier way to pay online!">
-    <img alt = "" border = "0" src = "https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width = "1" height = "1">
+    <input type = "hidden" name = "hosted_button_id" value = "">
+    <div align = "center"><input type = "submit" value = "Buy" style = "width: 70px; height: 40px; font-weight: bold"></div>
 </form>
 </div>
 
@@ -110,14 +109,18 @@ function Checkout(styleNum, color) {
     var sizeType = ((styleNum == "RR9001") || (styleNum == "RR9501")) ? "a" : ((styleNum == "RR9002") ? "b" : (((styleNum == "RR9071") || (styleNum == "RR9081")) ? "c" : ((styleNum == "RR9091") ? "d" : "unknown")));
     if (styleNum == "RR9100") {
         document.getElementById("size").innerHTML = "";
-    } else if (sizeType == "a") {
-        document.getElementById("size").innerHTML = sizeA;
-    } else if (sizeType == "b") {
-        document.getElementById("size").innerHTML = sizeB;
-    } else if (sizeType == "c") {
-        document.getElementById("size").innerHTML = sizeC;
-    } else if (sizeType == "d") {
-        document.getElementById("size").innerHTML = sizeD;
+    } else {
+        if (sizeType == "a") {
+            document.getElementById("size").innerHTML = sizeA;
+        } else if (sizeType == "b") {
+            document.getElementById("size").innerHTML = sizeB;
+        } else if (sizeType == "c") {
+            document.getElementById("size").innerHTML = sizeC;
+        } else if (sizeType == "d") {
+            document.getElementById("size").innerHTML = sizeD;
+        }
+        document.forms["checkout"]["size"].style.borderWidth = "1px";
+        document.forms["checkout"]["size"].style.borderColor = "black";
     }
     document.getElementById("price").innerHTML = ((styleNum == "RR9001") || (styleNum == "RR9091")) ? ("$99") : ((styleNum == "RR9002") ? ("$129") : (((styleNum == "RR9071") || (styleNum == "RR9081")) ? ("$69") : ((styleNum == "RR9501") ? ("$109") : ((styleNum == "RR9100") ? ("$27") : ("unknown")))));
     document.getElementById("quantity").value = "1";
@@ -187,55 +190,55 @@ function submitForm() {
     
     if (styleNum == "RR9001") {
         if (color == "Black & Gold") {
-            document.getElementById("hosted_button_id").value = "BVLH3E7PTNF5S";
+            document.forms["checkout"]["hosted_button_id"].value = "BVLH3E7PTNF5S";
         } else if (color == "Purple & Gold") {
-            document.getElementById("hosted_button_id").value = "GHRLVCYCJ7HWW";
+            document.forms["checkout"]["hosted_button_id"].value = "GHRLVCYCJ7HWW";
         } else if (color == "White & Gold") {
-            document.getElementById("hosted_button_id").value = "LGX23YGP9NNML";
+            document.forms["checkout"]["hosted_button_id"].value = "LGX23YGP9NNML";
         }
     } else if (styleNum == "RR9002") {
         if (color == "Black & Gold") {
-            document.getElementById("hosted_button_id").value = "UJSNMRFM98URA";
+            document.forms["checkout"]["hosted_button_id"].value = "UJSNMRFM98URA";
         } else if (color == "Purple & Gold") {
-            document.getElementById("hosted_button_id").value = "YHE3HJ8WW9B7N";
+            document.forms["checkout"]["hosted_button_id"].value = "YHE3HJ8WW9B7N";
         } else if (color == "White & Gold") {
-            document.getElementById("hosted_button_id").value = "PRWSYFS9LEL4J";
+            document.forms["checkout"]["hosted_button_id"].value = "PRWSYFS9LEL4J";
         }
     } else if (styleNum == "RR9071") {
         if (color == "Black") {
-            document.getElementById("hosted_button_id").value = "YBGDR78ZT2VLE";
+            document.forms["checkout"]["hosted_button_id"].value = "YBGDR78ZT2VLE";
         } else if (color == "Red") {
-            document.getElementById("hosted_button_id").value = "HM5539UER75ZG";
+            document.forms["checkout"]["hosted_button_id"].value = "HM5539UER75ZG";
         } else if (color == "White") {
-            document.getElementById("hosted_button_id").value = "SDXZ7GKZTPX2N";
+            document.forms["checkout"]["hosted_button_id"].value = "SDXZ7GKZTPX2N";
         }
     } else if (styleNum == "RR9081") {
         if (color == "Black") {
-            document.getElementById("hosted_button_id").value = "RJJ88KR4397AY";
+            document.forms["checkout"]["hosted_button_id"].value = "RJJ88KR4397AY";
         } else if (color == "Purple") {
-            document.getElementById("hosted_button_id").value = "D6QWYEATRFL68";
+            document.forms["checkout"]["hosted_button_id"].value = "D6QWYEATRFL68";
         } else if (color == "White") {
-            document.getElementById("hosted_button_id").value = "FECTWSMH3KP8Q";
+            document.forms["checkout"]["hosted_button_id"].value = "FECTWSMH3KP8Q";
         }
     } else if (styleNum == "RR9091") {
         if (color == "Black & Gold") {
-            document.getElementById("hosted_button_id").value = "ARK9CB5PZHC8E";
+            document.forms["checkout"]["hosted_button_id"].value = "ARK9CB5PZHC8E";
         } else if (color == "Purple & Gold") {
-            document.getElementById("hosted_button_id").value = "9V39EJFPABC84";
+            document.forms["checkout"]["hosted_button_id"].value = "9V39EJFPABC84";
         } else if (color == "White & Gold") {
-            document.getElementById("hosted_button_id").value = "ZHQLGF67WFZSG";
+            document.forms["checkout"]["hosted_button_id"].value = "ZHQLGF67WFZSG";
         }
     } else if (styleNum == "RR9501") {
         if (color == "White") {
-            document.getElementById("hosted_button_id").value = "9VXLB8SARERK2";
+            document.forms["checkout"]["hosted_button_id"].value = "9VXLB8SARERK2";
         }
     } else if (styleNum == "RR9100") {
         if (color == "Red") {
-            document.getElementById("hosted_button_id").value = "CGYY7NTTSW6UJ";
+            document.forms["checkout"]["hosted_button_id"].value = "CGYY7NTTSW6UJ";
         } else if (color == "Black") {
-            document.getElementById("hosted_button_id").value = "DMWQET86RVPUW";
+            document.forms["checkout"]["hosted_button_id"].value = "DMWQET86RVPUW";
         } else if (color == "Purple") {
-            document.getElementById("hosted_button_id").value = "ABJ25D8BKZ3YL";
+            document.forms["checkout"]["hosted_button_id"].value = "ABJ25D8BKZ3YL";
         }
     }
     return true;
